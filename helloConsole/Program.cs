@@ -4,6 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        var name = args.Length > 0 && !string.IsNullOrWhiteSpace(args[0])
+            ? args[0]
+            : "World";
+
+        Console.WriteLine($"Hello, {name}!");
     }
 }
