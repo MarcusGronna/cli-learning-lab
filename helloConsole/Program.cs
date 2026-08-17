@@ -4,10 +4,20 @@ class Program
 {
     static void Main(string[] args)
     {
-        var name = args.Length > 0 && !string.IsNullOrWhiteSpace(args[0])
+        var variable = args.Length > 0
             ? args[0]
             : "World";
 
-        Console.WriteLine($"Hello, {name}!");
+        Console.WriteLine($"Hello, {variable}! Type: {variable.GetType()}");
+
+        if (int.TryParse(variable, out int parsedVariable))
+        {
+            Console.WriteLine($"Hello, {parsedVariable}! Type: {parsedVariable.GetType()}");
+        }
+        else
+        {
+            Console.WriteLine($"Could not parse value to integer");
+        }
+
     }
 }
