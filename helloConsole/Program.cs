@@ -4,14 +4,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("enter some text and hit ENTER");
+        var keyPressed = Console.ReadKey(true).Key;
 
-        string? line;
-        while (!string.IsNullOrEmpty(line = Console.ReadLine()))
+        while (keyPressed != ConsoleKey.Escape)
         {
-            Console.WriteLine(line);
+            Console.WriteLine($"You pressed {keyPressed}");
+            keyPressed = Console.ReadKey(true).Key;
         }
-
-        Console.WriteLine("bye!");
     }
 }
