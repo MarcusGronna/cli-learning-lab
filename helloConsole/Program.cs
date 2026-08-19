@@ -4,12 +4,20 @@ class Program
 {
     static void Main(string[] args)
     {
-        var keyPressed = Console.ReadKey(true).Key;
-
-        while (keyPressed != ConsoleKey.Escape)
+        Console.CancelKeyPress += (sender, e) =>
         {
-            Console.WriteLine($"You pressed {keyPressed}");
-            keyPressed = Console.ReadKey(true).Key;
+            e.Cancel = true;
+            Console.WriteLine("CancelKeyPress event raised!\nPerforming cleanup...");
+            Environment.Exit(0);
+        };
+
+        int counter = 1;
+        while (true)
+        {
+            Console.WriteLine($"Printing line number {counter}");
+            counter++;
+            Task delayTask = Task.Run(async () => await Task.Delay(1000));
+            delayTask.Wait();
         }
     }
 }
