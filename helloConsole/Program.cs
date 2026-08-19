@@ -4,18 +4,14 @@ class Program
 {
     static void Main(string[] args)
     {
-        var originalBackgroundColor = Console.BackgroundColor;
-        var originalForegroundColor = Console.ForegroundColor;
+        Console.WriteLine("enter some text and hit ENTER");
 
-        Console.BackgroundColor = ConsoleColor.Blue;
-        Console.ForegroundColor = ConsoleColor.Yellow;
+        string? line;
+        while (!string.IsNullOrEmpty(line = Console.ReadLine()))
+        {
+            Console.WriteLine(line);
+        }
 
-        Console.Title = "My Console Application";
-        Console.WriteLine("Hello my app");
-
-        Console.BackgroundColor = originalBackgroundColor;
-        Console.ForegroundColor = originalForegroundColor;
-
-        Console.ReadKey(true);
+        Console.WriteLine("bye!");
     }
 }
