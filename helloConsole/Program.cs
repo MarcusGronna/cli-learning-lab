@@ -4,20 +4,18 @@ class Program
 {
     static void Main(string[] args)
     {
-        var variable = args.Length > 0
-            ? args[0]
-            : "World";
+        var originalBackgroundColor = Console.BackgroundColor;
+        var originalForegroundColor = Console.ForegroundColor;
 
-        Console.WriteLine($"Hello, {variable}! Type: {variable.GetType()}");
+        Console.BackgroundColor = ConsoleColor.Blue;
+        Console.ForegroundColor = ConsoleColor.Yellow;
 
-        if (int.TryParse(variable, out int parsedVariable))
-        {
-            Console.WriteLine($"Hello, {parsedVariable}! Type: {parsedVariable.GetType()}");
-        }
-        else
-        {
-            Console.WriteLine($"Could not parse value to integer");
-        }
+        Console.Title = "My Console Application";
+        Console.WriteLine("Hello my app");
 
+        Console.BackgroundColor = originalBackgroundColor;
+        Console.ForegroundColor = originalForegroundColor;
+
+        Console.ReadKey(true);
     }
 }
