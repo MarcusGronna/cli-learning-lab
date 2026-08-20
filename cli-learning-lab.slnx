@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="guessing-game/guessing-game.csproj" />
   <Project Path="helloConsole/helloConsole.csproj" />
 </Solution>
