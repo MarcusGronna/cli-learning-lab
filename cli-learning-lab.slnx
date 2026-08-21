@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="bookmarkr/bookmarkr.csproj" />
   <Project Path="guessing-game/guessing-game.csproj" />
   <Project Path="helloConsole/helloConsole.csproj" />
 </Solution>
